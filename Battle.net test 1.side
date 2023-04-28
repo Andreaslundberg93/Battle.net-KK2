@@ -1,0 +1,111 @@
+{
+  "id": "f2403345-4bc2-41c8-9606-7b7fd0b91581",
+  "version": "2.0",
+  "name": "Battle.net test",
+  "url": "https://eu.shop.battle.net/en-gb?from=root",
+  "tests": [{
+    "id": "a92ba32c-63eb-4a95-b32f-fea9af9ed148",
+    "name": "Navigate to shop and select an item",
+    "commands": [{
+      "id": "d7b39c50-a405-4708-8336-03458ec1601a",
+      "comment": "",
+      "command": "open",
+      "target": "https://eu.shop.battle.net/en-gb?from=root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ca908a73-6c11-4904-9244-01282b2f0261",
+      "comment": "Select World of warcraft Game Icon",
+      "command": "click",
+      "target": "css=.family-bar__icons--item:nth-child(3) .icon",
+      "targets": [
+        ["css=.family-bar__icons--item:nth-child(3) .icon", "css:finder"],
+        ["xpath=//img[@alt='World of Warcraft']", "xpath:img"],
+        ["xpath=//div[@id='start-of-content']/section/storefront-family-bar/nav/div/div/div/div/storefront-link[3]/a/img", "xpath:idRelative"],
+        ["xpath=//storefront-link[3]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c12570f7-a8da-4176-a122-03cd2bd68006",
+      "comment": "Mount tab",
+      "command": "click",
+      "target": "css=.group-link:nth-child(4) span",
+      "targets": [
+        ["css=.group-link:nth-child(4) span", "css:finder"],
+        ["xpath=//main[@id='main-content-skip-link-anchor']/section/storefront-browsing-card-group-nav/nav/div[2]/div/button[4]/meka-menu-label/span", "xpath:idRelative"],
+        ["xpath=//button[4]/meka-menu-label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2b8465e-364c-45cd-8d54-d202c41661e7",
+      "comment": "Make sure that the mount Imperial Quilen is present.",
+      "command": "assertElementPresent",
+      "target": "css=#mounts .ng-star-inserted:nth-child(8) storefront-link > .ng-star-inserted > .ng-star-inserted",
+      "targets": [
+        ["css=#mounts .ng-star-inserted:nth-child(8) storefront-link > .ng-star-inserted > .ng-star-inserted", "css:finder"],
+        ["xpath=//div[@id='mounts']/section/storefront-browsing-card-group-layout/ul/li[8]/storefront-browsing-card/div/storefront-link/a/meka-browsing-card", "xpath:idRelative"],
+        ["xpath=//section[5]/storefront-contentstack-browsing-card-collection/storefront-browsing-card-group/div/section/storefront-browsing-card-group-layout/ul/li[8]/storefront-browsing-card/div/storefront-link/a/meka-browsing-card", "xpath:position"]
+      ],
+      "value": "Imperial Quilen"
+    }]
+  }, {
+    "id": "f9b32241-e25f-4e1b-bd9f-1f9d03bfc7fa",
+    "name": "Check to see if sorting mechanic works",
+    "commands": [{
+      "id": "51933c0f-83b6-43d6-8561-c5632b500d09",
+      "comment": "",
+      "command": "open",
+      "target": "https://eu.shop.battle.net/en-gb?from=root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7b93124f-6008-4a53-9eec-c5616d323ded",
+      "comment": "",
+      "command": "click",
+      "target": "css=.family-bar__icons--item:nth-child(3) .icon",
+      "targets": [
+        ["css=.family-bar__icons--item:nth-child(3) .icon", "css:finder"],
+        ["xpath=(//img[@alt='World of Warcraft'])[9]", "xpath:img"],
+        ["xpath=//div[@id='start-of-content']/section/storefront-family-bar/nav/div/div/div/div/storefront-link[3]/a/img", "xpath:idRelative"],
+        ["xpath=//storefront-link[3]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "798924cc-243e-4e96-92de-ee6934c1d0b3",
+      "comment": "",
+      "command": "click",
+      "target": "id=browse-page-filter-sort-by",
+      "targets": [
+        ["id=browse-page-filter-sort-by", "id"],
+        ["css=#browse-page-filter-sort-by", "css:finder"],
+        ["xpath=//select[@id='browse-page-filter-sort-by']", "xpath:attributes"],
+        ["xpath=//main[@id='main-content-skip-link-anchor']/section/storefront-browsing-card-group-nav/nav/div[3]/storefront-browsing-card-group-filter/div/form/fieldset/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6aa449a8-5f7f-4fea-9f12-dc475ea0f2f0",
+      "comment": "",
+      "command": "select",
+      "target": "id=browse-page-filter-sort-by",
+      "targets": [
+        ["id=browse-page-filter-sort-by", "id"],
+        ["css=#browse-page-filter-sort-by", "css:finder"],
+        ["xpath=//select[@id='browse-page-filter-sort-by']", "xpath:attributes"],
+        ["xpath=//main[@id='main-content-skip-link-anchor']/section/storefront-browsing-card-group-nav/nav/div[3]/storefront-browsing-card-group-filter/div/form/fieldset/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "index=4"
+    }]
+  }],
+  "suites": [{
+    "id": "fe9e956b-9369-43a1-a0b0-dacc7222d7e3",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["a92ba32c-63eb-4a95-b32f-fea9af9ed148"]
+  }],
+  "urls": ["https://eu.shop.battle.net/en-gb?from=root"],
+  "plugins": []
+}

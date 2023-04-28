@@ -1,0 +1,424 @@
+{
+  "id": "f2403345-4bc2-41c8-9606-7b7fd0b91581",
+  "version": "2.0",
+  "name": "Battle.net test",
+  "url": "https://eu.shop.battle.net/en-gb?from=root",
+  "tests": [{
+    "id": "a92ba32c-63eb-4a95-b32f-fea9af9ed148",
+    "name": "Navigate to shop and select an item",
+    "commands": [{
+      "id": "d7b39c50-a405-4708-8336-03458ec1601a",
+      "comment": "",
+      "command": "open",
+      "target": "https://eu.shop.battle.net/en-gb?from=root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ca908a73-6c11-4904-9244-01282b2f0261",
+      "comment": "Select World of warcraft Game Icon",
+      "command": "click",
+      "target": "css=.family-bar__icons--item:nth-child(3) .icon",
+      "targets": [
+        ["css=.family-bar__icons--item:nth-child(3) .icon", "css:finder"],
+        ["xpath=//img[@alt='World of Warcraft']", "xpath:img"],
+        ["xpath=//div[@id='start-of-content']/section/storefront-family-bar/nav/div/div/div/div/storefront-link[3]/a/img", "xpath:idRelative"],
+        ["xpath=//storefront-link[3]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c12570f7-a8da-4176-a122-03cd2bd68006",
+      "comment": "Mount tab",
+      "command": "click",
+      "target": "css=.group-link:nth-child(4) span",
+      "targets": [
+        ["css=.group-link:nth-child(4) span", "css:finder"],
+        ["xpath=//main[@id='main-content-skip-link-anchor']/section/storefront-browsing-card-group-nav/nav/div[2]/div/button[4]/meka-menu-label/span", "xpath:idRelative"],
+        ["xpath=//button[4]/meka-menu-label/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2b8465e-364c-45cd-8d54-d202c41661e7",
+      "comment": "Make sure that the mount Imperial Quilen is present.",
+      "command": "assertElementPresent",
+      "target": "css=#mounts .ng-star-inserted:nth-child(8) storefront-link > .ng-star-inserted > .ng-star-inserted",
+      "targets": [
+        ["css=#mounts .ng-star-inserted:nth-child(8) storefront-link > .ng-star-inserted > .ng-star-inserted", "css:finder"],
+        ["xpath=//div[@id='mounts']/section/storefront-browsing-card-group-layout/ul/li[8]/storefront-browsing-card/div/storefront-link/a/meka-browsing-card", "xpath:idRelative"],
+        ["xpath=//section[5]/storefront-contentstack-browsing-card-collection/storefront-browsing-card-group/div/section/storefront-browsing-card-group-layout/ul/li[8]/storefront-browsing-card/div/storefront-link/a/meka-browsing-card", "xpath:position"]
+      ],
+      "value": "Imperial Quilen"
+    }]
+  }, {
+    "id": "f9b32241-e25f-4e1b-bd9f-1f9d03bfc7fa",
+    "name": "Check to see if sorting mechanic works",
+    "commands": [{
+      "id": "51933c0f-83b6-43d6-8561-c5632b500d09",
+      "comment": "",
+      "command": "open",
+      "target": "https://eu.shop.battle.net/en-gb?from=root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7b93124f-6008-4a53-9eec-c5616d323ded",
+      "comment": "",
+      "command": "click",
+      "target": "css=.family-bar__icons--item:nth-child(3) .icon",
+      "targets": [
+        ["css=.family-bar__icons--item:nth-child(3) .icon", "css:finder"],
+        ["xpath=(//img[@alt='World of Warcraft'])[9]", "xpath:img"],
+        ["xpath=//div[@id='start-of-content']/section/storefront-family-bar/nav/div/div/div/div/storefront-link[3]/a/img", "xpath:idRelative"],
+        ["xpath=//storefront-link[3]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "798924cc-243e-4e96-92de-ee6934c1d0b3",
+      "comment": "",
+      "command": "click",
+      "target": "id=browse-page-filter-sort-by",
+      "targets": [
+        ["id=browse-page-filter-sort-by", "id"],
+        ["css=#browse-page-filter-sort-by", "css:finder"],
+        ["xpath=//select[@id='browse-page-filter-sort-by']", "xpath:attributes"],
+        ["xpath=//main[@id='main-content-skip-link-anchor']/section/storefront-browsing-card-group-nav/nav/div[3]/storefront-browsing-card-group-filter/div/form/fieldset/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6aa449a8-5f7f-4fea-9f12-dc475ea0f2f0",
+      "comment": "",
+      "command": "select",
+      "target": "id=browse-page-filter-sort-by",
+      "targets": [
+        ["id=browse-page-filter-sort-by", "id"],
+        ["css=#browse-page-filter-sort-by", "css:finder"],
+        ["xpath=//select[@id='browse-page-filter-sort-by']", "xpath:attributes"],
+        ["xpath=//main[@id='main-content-skip-link-anchor']/section/storefront-browsing-card-group-nav/nav/div[3]/storefront-browsing-card-group-filter/div/form/fieldset/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "index=4"
+    }, {
+      "id": "fe87606f-6916-42fd-a2cd-abdc80ce2fb3",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "//*[@id=\"browse-page-filter-sort-by\"]/option[5]",
+      "targets": [
+        ["id=browse-page-filter-sort-by", "id"],
+        ["css=#browse-page-filter-sort-by", "css:finder"],
+        ["xpath=//select[@id='browse-page-filter-sort-by']", "xpath:attributes"],
+        ["xpath=//main[@id='main-content-skip-link-anchor']/section/storefront-browsing-card-group-nav/nav/div[3]/storefront-browsing-card-group-filter/div/form/fieldset/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "4ac79263-f829-46eb-9fb4-b554fa569226",
+    "name": "Navigate support",
+    "commands": [{
+      "id": "01c112bb-c512-4a54-9b74-02155def511e",
+      "comment": "",
+      "command": "open",
+      "target": "https://eu.shop.battle.net/en-gb?from=root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a0908900-ea43-45b7-bcf8-135b6c71c80c",
+      "comment": "",
+      "command": "click",
+      "target": "id=storefront-top-navigation",
+      "targets": [
+        ["id=storefront-top-navigation", "id"],
+        ["css=#storefront-top-navigation", "css:finder"],
+        ["xpath=//blz-nav-battlenet[@id='storefront-top-navigation']", "xpath:attributes"],
+        ["xpath=//blz-nav-battlenet", "xpath:position"]
+      ],
+      "value": "Support"
+    }, {
+      "id": "0ab6d820-df0e-4c0f-9871-6aa2b02b9951",
+      "comment": "",
+      "command": "type",
+      "target": "name=q",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.st-form-control:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//div[@id='support-page-content']/div/div/div/div/form/span/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Account"
+    }, {
+      "id": "5ba2d43b-8c4f-497d-88da-1afbd24f801c",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=q",
+      "targets": [
+        ["name=q", "name"],
+        ["css=.st-form-control:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='q']", "xpath:attributes"],
+        ["xpath=//div[@id='support-page-content']/div/div/div/div/form/span/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "e8513b31-f919-4f1f-bc22-0efc17bbe933",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Missing Heirloom From Collection",
+      "targets": [
+        ["linkText=Missing Heirloom From Collection", "linkText"],
+        ["css=.search-result:nth-child(7) .st-h3 > .hover", "css:finder"],
+        ["xpath=//a[contains(text(),'Missing Heirloom From Collection')]", "xpath:link"],
+        ["xpath=//div[@id='support-page-content']/div[19]/div[3]/div[2]/div[7]/div/span/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/support/en/article/6780')]", "xpath:href"],
+        ["xpath=//div[7]/div/span/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Missing Heirloom From Collection')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c560646-779d-4550-bebd-775bdccd1125",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.section-header",
+      "targets": [
+        ["css=.section-header", "css:finder"],
+        ["xpath=//div[@id='support-page-content']/div/div[2]/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Missing Heirloom From Collection')]", "xpath:innerText"]
+      ],
+      "value": "Missing Hierloom From Collection"
+    }]
+  }, {
+    "id": "606597a0-d1b7-44ba-93dc-4ef3e0b7bf9e",
+    "name": "Search avaiable jobs on site",
+    "commands": [{
+      "id": "8305b560-7b94-4aad-927c-6afa2160d76f",
+      "comment": "",
+      "command": "open",
+      "target": "https://eu.shop.battle.net/en-gb?from=root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a1c3f859-9575-453b-9560-dd70e6827457",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1539x1380",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5b765e34-5781-484c-8369-ec0b54d296d4",
+      "comment": "",
+      "command": "click",
+      "target": "id=global-navbar-footer",
+      "targets": [
+        ["id=global-navbar-footer", "id"],
+        ["css=#global-navbar-footer", "css:finder"],
+        ["xpath=//blz-nav-footer[@id='global-navbar-footer']", "xpath:attributes"],
+        ["xpath=//div[@id='footer']/blz-nav-footer", "xpath:idRelative"],
+        ["xpath=//blz-nav-footer", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0cb4ba7-8ba2-4ec0-81a1-ac99f2081a27",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.ph-card:nth-child(2) > .ph-media-cc-view1 > .au-target",
+      "targets": [
+        ["css=.ph-card:nth-child(2) > .ph-media-cc-view1 > .au-target", "css:finder"],
+        ["xpath=//a[contains(@href, 'https://news.blizzard.com/en-us/blizzard/23783947/introducing-makaiya-brown-deandi-and-development-lead')]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0b5daa96-0f7a-43a1-8255-0f078aa332de",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "linkText=introducing makaiya brown deandi and development lead",
+      "targets": [
+        ["linkText=introducing makaiya brown deandi and development lead", "linkText"],
+        ["css=.ph-card:nth-child(2) > .ph-media-cc-view1 > .au-target", "css:finder"],
+        ["xpath=//a[contains(@href, 'https://news.blizzard.com/en-us/blizzard/23783947/introducing-makaiya-brown-deandi-and-development-lead')]", "xpath:href"],
+        ["xpath=//div[2]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'introducing makaiya brown deandi and development lead')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea6f11b3-ccdd-42dd-bd7a-66c3e723b233",
+      "comment": "",
+      "command": "click",
+      "target": "id=typehead",
+      "targets": [
+        ["id=typehead", "id"],
+        ["name=typehead", "name"],
+        ["css=#typehead", "css:finder"],
+        ["xpath=//input[@id='typehead']", "xpath:attributes"],
+        ["xpath=//div[2]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "272f2a2b-9522-4497-97d5-c1001f0730ed",
+      "comment": "",
+      "command": "click",
+      "target": "css=.phs-Art",
+      "targets": [
+        ["css=.phs-Art", "css:finder"],
+        ["xpath=//li[@id='typehead-result-item-4']/a/span[2]", "xpath:idRelative"],
+        ["xpath=//li[5]/a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Art / Animation')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "00f05311-3136-4e7f-ae0c-999d9aaa3034",
+      "comment": "",
+      "command": "click",
+      "target": "css=.jobs-list-item:nth-child(6) .job-title > span",
+      "targets": [
+        ["css=.jobs-list-item:nth-child(6) .job-title > span", "css:finder"],
+        ["xpath=//div[@id='acc-skip-content']/div/div/div/div/div[2]/section/div/div/div/div/div[3]/ul/li[6]/div/span/a/div/span", "xpath:idRelative"],
+        ["xpath=//li[6]/div/span/a/div/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a8a512c-8b4a-4525-aa3f-9f390b4802d4",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,799)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "01003f18-c2dc-4bf7-a056-4087872b0171",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,1579)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6306a4da-4307-4859-82ca-d777bd99caa6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bottom-jobaction > .btn",
+      "targets": [
+        ["css=.bottom-jobaction > .btn", "css:finder"],
+        ["xpath=(//a[contains(@href, 'https://careers.blizzard.com/global/en/apply?jobSeqNo=BLENGLOBALR019350EXTERNALENGLOBAL&pjid=7285542f-6e5f-47ac-a1c5-aa224c30b09d&uid=18673a4deba1677-384000-64e2-18673a4debb19c9&p_in_ref=https://eu.shop.battle.net/en-gb?from')])[2]", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e20e98e4-208e-4810-89b9-177406249db5",
+      "comment": "",
+      "command": "click",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=firstName", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//div[@id='profile-info']/div[2]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b42984f-be44-4a72-96b9-a3d84fcd3017",
+      "comment": "",
+      "command": "type",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=firstName", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//div[@id='profile-info']/div[2]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Andreas"
+    }, {
+      "id": "736124f1-1df9-453d-8028-0b6c8b2560a9",
+      "comment": "",
+      "command": "click",
+      "target": "id=lastName",
+      "targets": [
+        ["id=lastName", "id"],
+        ["name=lastName", "name"],
+        ["css=#lastName", "css:finder"],
+        ["xpath=//input[@id='lastName']", "xpath:attributes"],
+        ["xpath=//div[@id='profile-info']/div[2]/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e5d2070-b893-416d-b7cd-7b43708d00de",
+      "comment": "",
+      "command": "type",
+      "target": "id=lastName",
+      "targets": [
+        ["id=lastName", "id"],
+        ["name=lastName", "name"],
+        ["css=#lastName", "css:finder"],
+        ["xpath=//input[@id='lastName']", "xpath:attributes"],
+        ["xpath=//div[@id='profile-info']/div[2]/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Lundberg"
+    }, {
+      "id": "e65acd8f-c5f7-4334-ad39-0423033f9455",
+      "comment": "",
+      "command": "click",
+      "target": "css=.box-content-block",
+      "targets": [
+        ["css=.box-content-block", "css:finder"],
+        ["xpath=//div[@id='registrationDiv']/div", "xpath:idRelative"],
+        ["xpath=//div/div[4]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6ea6b8a-ee2f-4007-9b26-58ab5f7cacf4",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.col-xs-12 > message",
+      "targets": [
+        ["css=.col-xs-12 > message", "css:finder"],
+        ["xpath=//div[@id='registrationDiv']/div/div/message", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/message", "xpath:position"]
+      ],
+      "value": "MY INFORMATION"
+    }]
+  }, {
+    "id": "68d7e5f0-53e4-47ee-98df-187283a65fb1",
+    "name": "Search Bar",
+    "commands": [{
+      "id": "91a3d437-e594-4a53-add7-baf8eb646284",
+      "comment": "",
+      "command": "open",
+      "target": "https://eu.shop.battle.net/en-gb?from=root",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7e752a1c-519c-47f6-a4bd-918e9537af68",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1539x1380",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "926f55ff-8bb8-4677-adc3-22965b498180",
+      "comment": "",
+      "command": "click",
+      "target": "id=search-desktop-input",
+      "targets": [
+        ["id=search-desktop-input", "id"],
+        ["css=#search-desktop-input", "css:finder"],
+        ["xpath=//input[@id='search-desktop-input']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "fe9e956b-9369-43a1-a0b0-dacc7222d7e3",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["a92ba32c-63eb-4a95-b32f-fea9af9ed148"]
+  }],
+  "urls": ["https://eu.shop.battle.net/en-gb?from=root"],
+  "plugins": []
+}
