@@ -4,8 +4,8 @@ pipeline {
         stage("Running tests") {
             steps { 
                 dir('C:/Users/aandr/Documents/GitHub/Battle.net-KK2/test_inet')
-                bat "python -m unittest" 
-                echo "Testing" 
+                    bat "python -m unittest" 
+                    echo "Testing" 
             }
                  
         } 
