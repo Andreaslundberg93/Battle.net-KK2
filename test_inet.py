@@ -5,7 +5,7 @@ import unittest
 from selenium.webdriver.common.action_chains import ActionChains 
 import time 
 
-class BrowserTest(unittest.TestCase): 
+class InetTest(unittest.TestCase): 
     
     @classmethod 
     def setUpClass(cls): 
