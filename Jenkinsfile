@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage("Running tests") {
             steps { 
-                bat "python -m unittest test_inet.py" 
+                dir('C:/Users/aandr/Documents/GitHub/Battle.net-KK2/test_inet')
+                bat "python -m unittest" 
                 echo "Testing" 
             }
                  
