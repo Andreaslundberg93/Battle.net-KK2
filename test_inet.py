@@ -17,13 +17,13 @@ class InetTest(unittest.TestCase):
         self.driver.get("https://inet.se") 
             
     def test_datorkomponenter(self):
-        self.driver.find_element(By.XPATH, "/html/body/div[1]/div[5]/div/button[1]").click() 
+        self.driver.find_element(By.XPATH, "/html/body/div[1]/div[7]/div/button[1]").click() 
         self.driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div/div/div[2]/div[2]/div[3]/a[2]").click() 
         datorkomponenter = self.driver.find_element(By.XPATH , "/html/body/div[1]/div[3]/div/div/div[2]/div[2]/section/h1")
         self.assertTrue(datorkomponenter.is_displayed)
         
     def test_add_cart(self):
-        self.driver.find_element(By.XPATH, "/html/body/div[1]/div[5]/div/button[1]").click()
+        self.driver.find_element(By.XPATH, "/html/body/div[1]/div[7]/div/button[1]").click()
         self.driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/div/div/div[2]/div[2]/div[12]/div/div/div[1]/a').click()
         self.driver.find_element(By.XPATH, '/html/body/div[1]/div[3]/div/div/div[2]/div[2]/article/div[8]/div[1]/div/section/div[4]/div/button').click()
         self.driver.find_element(By.XPATH, '/html/body/div[1]/div[2]/nav/div/div/div[6]/div/div/div/a').click()
@@ -31,13 +31,13 @@ class InetTest(unittest.TestCase):
         self.assertTrue(vara.is_displayed)
         
     def test_verify_malmo_address(self):
-        self.driver.find_element(By.XPATH, "/html/body/div[1]/div[5]/div/button[1]").click()
+        self.driver.find_element(By.XPATH, "/html/body/div[1]/div[7]/div/button[1]").click()
         self.driver.find_element(By.XPATH, "/html/body/div[1]/footer/div/section[1]/article[1]/ul/li[4]/a").click()
         correct_adress = self.driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div/div/div[2]/div[2]/cms-content/article/cms-content/div/div[4]/div[1]/h2/small")
         self.assertTrue(correct_adress.is_displayed)
         
     def test_verify_kundservice_oppettider_vardagar(self):
-        self.driver.find_element(By.XPATH, "/html/body/div[1]/div[5]/div/button[1]").click()
+        self.driver.find_element(By.XPATH, "/html/body/div[1]/div[7]/div/button[1]").click()
         self.driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div/div/div[1]/section/a[2]").click()
         self.driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div/div/div[2]/div[2]/cms-content/article/cms-content/div[2]/div[6]/a").click()
         self.driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div/div/div[1]/section/a[2]").click()
@@ -45,7 +45,7 @@ class InetTest(unittest.TestCase):
         self.assertTrue(oppettider_vardag.is_displayed)
         
     def test_select_specific_product_brand(self):
-        self.driver.find_element(By.XPATH, "/html/body/div[1]/div[5]/div/button[1]").click()
+        self.driver.find_element(By.XPATH, "/html/body/div[1]/div[7]/div/button[1]").click()
         self.driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div/div/div[1]/div/div[2]/ol/li[3]/div/button").click()
         self.driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div/div/div[1]/div/div[2]/ol/li[3]/div[2]/div/ol/li[3]/div/button").click()
         self.driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/div/div/div[1]/div/div[2]/ol/li[3]/div[2]/div/ol/li[3]/div[2]/div/ol/li[6]/div/button").click()

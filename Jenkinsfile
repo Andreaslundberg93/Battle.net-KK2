@@ -4,7 +4,7 @@ pipeline {
         stage("Running tests") {
             steps { 
                 
-                bat "python -m unittest test_inet.py" 
+                bat "java -m unittest test_inet.py" 
                 echo "Testing" 
             }
                  
